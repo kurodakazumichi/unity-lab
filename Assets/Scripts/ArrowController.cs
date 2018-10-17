@@ -24,6 +24,8 @@ public class ArrowController : MonoBehaviour {
 
         Vector2 dir = this.transform.position - player.transform.position;
         if(dir.magnitude < 1.5f) {
+            GameObject manager = GameObject.Find("Manager");
+            manager.GetComponent<CatEscapeManager>().DecreseHp();
             Destroy(this.gameObject);
         }
 	}
